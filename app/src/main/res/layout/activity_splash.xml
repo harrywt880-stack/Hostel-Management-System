@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/splashLogo"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:background="@drawable/logo_circle_bg"
+        android:gravity="center"
+        android:text="H"
+        android:textColor="#FFFFFF"
+        android:textSize="42sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/splashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Hostel Management"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/splashSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Smart Admin Control System"
+        android:textColor="#CBD5E1"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/splashLoader"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="38dp"
+        android:indeterminate="true" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/user_card_bg"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <TextView
+        android:id="@+id/visitorTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Visitor Name visiting User Name"
+        android:textColor="#0F172A"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/visitorMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Brother • 9876543210 • Student"
+        android:textColor="#64748B"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/visitorPurpose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Purpose: Personal visit"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/visitorDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Visit date: 2026-04-28 00:00:00"
+        android:textColor="#2563EB"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

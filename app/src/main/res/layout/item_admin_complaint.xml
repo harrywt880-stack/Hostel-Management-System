@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/user_card_bg"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <TextView
+        android:id="@+id/complaintIdText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CMP-20260428-AB12"
+        android:textColor="#2563EB"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Student Name"
+        android:textColor="#0F172A"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userEmailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="student@email.com"
+        android:textColor="#64748B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/complaintSubjectText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Fan not working"
+        android:textColor="#0F172A"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/complaintDescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="The ceiling fan stops after a few minutes."
+        android:textColor="#475569"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/complaintMetaText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="2026-04-28 10:30"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/currentStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="OPEN"
+        android:textColor="#DC2626"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <AutoCompleteTextView
+        android:id="@+id/statusSelector"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/input_premium_bg"
+        android:hint="Update status"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp" />
+
+    <EditText
+        android:id="@+id/adminNotesInput"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/input_premium_bg"
+        android:gravity="top|start"
+        android:hint="Admin notes"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:padding="18dp" />
+
+    <Button
+        android:id="@+id/updateComplaintBtn"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/primary_button_bg"
+        android:text="Update Complaint"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

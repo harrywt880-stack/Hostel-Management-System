@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/user_card_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/planDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/section_badge_bg"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:text="2026-04-28"
+        android:textColor="#2563EB"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/breakfastText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Breakfast: Idli, Sambar"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/lunchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Lunch: Rice, Dal"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/snacksText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Snacks: Tea and Biscuits"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/dinnerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Dinner: Roti, Paneer"
+        android:textColor="#334155"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/notesText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/info_strip_bg"
+        android:padding="12dp"
+        android:text="Notes: Sweet dish after lunch"
+        android:textColor="#64748B"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/planMetaText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Updated by Admin"
+        android:textColor="#2563EB"
+        android:textSize="12sp" />
+
+</LinearLayout>

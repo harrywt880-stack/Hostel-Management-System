@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/dashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:background="@drawable/logo_circle_blue"
+                android:gravity="center"
+                android:text="H"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/welcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome, Admin"
+                    android:textColor="#0F172A"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subtitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hostel Management System"
+                    android:textColor="#64748B"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/logoutText"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/logout_bg"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Logout"
+                android:textColor="#DC2626"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statsBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/dashboard_hero_bg"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smart Hostel Control"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Track rooms, users and occupancy from one admin dashboard."
+                android:textColor="#DBEAFE"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/statStudents"
+                style="@style/StatCard"
+                android:text="--&#10;Students" />
+
+            <TextView
+                android:id="@+id/statRooms"
+                style="@style/StatCard"
+                android:layout_marginStart="10dp"
+                android:text="--&#10;Rooms" />
+
+            <TextView
+                android:id="@+id/statPending"
+                style="@style/StatCard"
+                android:layout_marginStart="10dp"
+                android:text="--&#10;Occupied" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Management Modules"
+            android:textColor="#0F172A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/dashboardGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
+
+            <TextView
+                android:id="@+id/usersCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Users&#10;Manage accounts" />
+
+            <TextView
+                android:id="@+id/hostelCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Hostel Info&#10;Hostel settings" />
+
+            <TextView
+                android:id="@+id/roomsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Rooms&#10;Availability" />
+
+            <TextView
+                android:id="@+id/bookingsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Bookings&#10;Requests" />
+
+            <TextView
+                android:id="@+id/paymentsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Payments&#10;Rent tracking" />
+
+            <TextView
+                android:id="@+id/complaintsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Complaints&#10;Issue resolve" />
+
+            <TextView
+                android:id="@+id/noticesCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Notices&#10;Announcements" />
+
+            <TextView
+                android:id="@+id/attendanceCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Attendance&#10;Daily records" />
+
+            <TextView
+                android:id="@+id/visitorsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Visitors&#10;Entry logs" />
+
+            <TextView
+                android:id="@+id/messCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Mess&#10;Food plans" />
+
+            <TextView
+                android:id="@+id/reportsCard"
+                style="@style/PremiumDashboardCard"
+                android:text="Reports&#10;Analytics" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>
