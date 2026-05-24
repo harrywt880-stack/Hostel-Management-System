@@ -14,6 +14,7 @@ import com.example.hostelmanagementsystem.models.LoginResponse
 import com.example.hostelmanagementsystem.network.ApiClient
 import com.example.hostelmanagementsystem.network.SessionManager
 import com.example.hostelmanagementsystem.ui.UiEffects
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -115,7 +116,7 @@ class LoginActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this@LoginActivity,
-                            "Invalid email or password",
+                            getErrorMessage(response),
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -132,5 +133,18 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
             })
+    }
+
+    private fun getErrorMessage(response: Response<LoginResponse>): String {
+        return try {
+            val errorBody = response.errorBody()?.string()
+            if (errorBody.isNullOrBlank()) {
+                "Invalid email or password"
+            } else {
+                JSONObject(errorBody).optString("message", "Invalid email or password")
+            }
+        } catch (_: Exception) {
+            "Invalid email or password"
+        }
     }
 }

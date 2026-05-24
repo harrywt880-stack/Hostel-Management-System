@@ -88,7 +88,7 @@ const loginUser = async (req, res) => {
 
     if (!user || !user.password) {
       return res.status(401).json({
-        message: "Invalid email or password"
+        message: "User not found"
       });
     }
 
@@ -96,7 +96,7 @@ const loginUser = async (req, res) => {
 
     if (!isPasswordMatch) {
       return res.status(401).json({
-        message: "Invalid email or password"
+        message: "Invalid password"
       });
     }
 
