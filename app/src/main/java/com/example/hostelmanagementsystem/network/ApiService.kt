@@ -14,6 +14,7 @@ import com.example.hostelmanagementsystem.models.CreatePaymentOrderResponse
 import com.example.hostelmanagementsystem.models.DashboardSummary
 import com.example.hostelmanagementsystem.models.Fee
 import com.example.hostelmanagementsystem.models.FeeResponse
+import com.example.hostelmanagementsystem.models.CurrentUserResponse
 import com.example.hostelmanagementsystem.models.LoginRequest
 import com.example.hostelmanagementsystem.models.LoginResponse
 import com.example.hostelmanagementsystem.models.MessPlan
@@ -57,6 +58,9 @@ interface ApiService {
 
     @GET("auth/users")
     fun getUsers(): Call<List<User>>
+
+    @GET("auth/me")
+    fun getCurrentUser(): Call<CurrentUserResponse>
 
     @GET("rooms")
     fun getRooms(): Call<List<Room>>

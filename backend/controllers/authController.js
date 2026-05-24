@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
     const { name, email, password, role } = req.body;
     const normalizedEmail = (email || "").trim().toLowerCase();
 
-    if (!name || !normalizedEmail || !password) {
+    if (!name || !normalizedEmail || typeof password !== "string" || !password) {
       return res.status(400).json({
         message: "Please fill all required fields"
       });
@@ -78,7 +78,7 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body;
     const normalizedEmail = (email || "").trim().toLowerCase();
 
-    if (!normalizedEmail || !password) {
+    if (!normalizedEmail || typeof password !== "string" || !password) {
       return res.status(400).json({
         message: "Email and password are required"
       });
@@ -86,7 +86,7 @@ const loginUser = async (req, res) => {
 
     const user = await User.findOne({ email: normalizedEmail });
 
-    if (!user) {
+    if (!user || !user.password) {
       return res.status(401).json({
         message: "Invalid email or password"
       });
@@ -127,8 +127,67 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getCurrentUser = async (req, res) => {
+  res.status(200).json({
+    user: serializeUser(req.user)
+  });
+};
+
+const getDatabaseInfo = async (req, res) => {
+  try {
+    const db = User.db;
+    const userCount = await User.countDocuments();
+
+    res.status(200).json({
+      databaseName: db.name,
+      host: db.host,
+      readyState: db.readyState,
+      usersCollection: User.collection.name,
+      userCount
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message
+    });
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    if (String(req.user._id) === String(userId)) {
+      return res.status(400).json({
+        message: "Admin cannot delete their own account"
+      });
+    }
+
+    const deletedUser = await User.findByIdAndDelete(userId);
+
+    if (!deletedUser) {
+      return res.status(404).json({
+        message: "User not found"
+      });
+    }
+
+    res.status(200).json({
+      message: "User deleted successfully",
+      user: serializeUser(deletedUser)
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message
+    });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
-  getAllUsers
+  getAllUsers,
+  getCurrentUser,
+  getDatabaseInfo,
+  deleteUser
 };

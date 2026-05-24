@@ -71,6 +71,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loginUser(email: String, password: String) {
         loginBtn.isEnabled = false
         loginBtn.text = "Logging in..."
+        sessionManager.clearSession()
 
         val loginRequest = LoginRequest(email, password)
 

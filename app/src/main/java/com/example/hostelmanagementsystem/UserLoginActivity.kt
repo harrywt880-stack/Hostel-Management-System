@@ -74,6 +74,7 @@ class UserLoginActivity : AppCompatActivity() {
     private fun loginUser(email: String, password: String) {
         loginBtn.isEnabled = false
         loginBtn.text = "Logging in..."
+        sessionManager.clearSession()
 
         ApiClient.apiService.loginUser(LoginRequest(email, password))
             .enqueue(object : Callback<LoginResponse> {
