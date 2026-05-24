@@ -12,8 +12,19 @@ val localProperties = Properties().apply {
     }
 }
 
-val backendHost = localProperties.getProperty("backendHost")?.takeIf { it.isNotBlank() } ?: "10.0.2.2"
-val backendPort = localProperties.getProperty("backendPort")?.takeIf { it.isNotBlank() } ?: "5000"
+val renderBackendUrl = "https://hostel-management-system-vh4u.onrender.com"
+val debugApiBaseUrl = localProperties.getProperty("debugApiBaseUrl")
+    ?.takeIf { it.isNotBlank() }
+    ?: "$renderBackendUrl/api/"
+val debugSocketUrl = localProperties.getProperty("debugSocketUrl")
+    ?.takeIf { it.isNotBlank() }
+    ?: renderBackendUrl
+val productionApiBaseUrl = localProperties.getProperty("productionApiBaseUrl")
+    ?.takeIf { it.isNotBlank() }
+    ?: "$renderBackendUrl/api/"
+val productionSocketUrl = localProperties.getProperty("productionSocketUrl")
+    ?.takeIf { it.isNotBlank() }
+    ?: renderBackendUrl
 
 android {
     namespace = "com.example.hostelmanagementsystem"
@@ -33,14 +44,14 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "API_BASE_URL", "\"http://$backendHost:$backendPort/api/\"")
-            buildConfigField("String", "SOCKET_URL", "\"http://$backendHost:$backendPort\"")
+            buildConfigField("String", "API_BASE_URL", "\"$debugApiBaseUrl\"")
+            buildConfigField("String", "SOCKET_URL", "\"$debugSocketUrl\"")
             manifestPlaceholders["usesCleartextTraffic"] = "true"
         }
         release {
             isMinifyEnabled = false
-            buildConfigField("String", "API_BASE_URL", "\"https://your-production-api.example.com/api/\"")
-            buildConfigField("String", "SOCKET_URL", "\"https://your-production-api.example.com\"")
+            buildConfigField("String", "API_BASE_URL", "\"$productionApiBaseUrl\"")
+            buildConfigField("String", "SOCKET_URL", "\"$productionSocketUrl\"")
             manifestPlaceholders["usesCleartextTraffic"] = "false"
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
